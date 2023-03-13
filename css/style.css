@@ -10,3 +10,15 @@
     padding: 2rem;
     gap: 1rem;
 }
+
+.card {
+    width: 40vh;
+}
+
+.card img {
+    object-fit: cover;
+    max-width: 40vh;
+    height: 22rem;
+}
+
+
