@@ -1,8 +1,8 @@
+
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 
-
-btnBuscarFilme.onclick = async () => {
+btnBuscarFilme.onclick = () => {
   if(inputBuscarFilme.value.length > 0){
 		let filmes = new Array();
     fetch("http://www.omdbapi.com/?apikey=f3259506&s="+inputBuscarFilme.value)
@@ -10,7 +10,7 @@ btnBuscarFilme.onclick = async () => {
 		.then((resp)=> {
 			resp.Search.forEach((item)=>{
 				console.log(item);
-				let filme=new Filme(
+				let filme = new Filme(
 					item.imdbID,
 					item.Title,
 					item.Year,
@@ -24,20 +24,14 @@ btnBuscarFilme.onclick = async () => {
 					null
 				);
 				filmes.push(filme);
-				
 			});
-			listarFilmes(filmes);
-			
-		})
-		
+			listarFilmes(filmes);			
+		})	
   }
   return false;
 }
 
 let genero = ["Ação","Aventura","Ficção cientifica"];
-
-
-
 let listarFilmes = async (filmes) => {
 	let listaFilmes = await document.querySelector("#lista-filmes");
 	listaFilmes.innerHTML = "";

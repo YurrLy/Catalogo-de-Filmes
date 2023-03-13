@@ -30,6 +30,7 @@ class Filme
     this.avaliacao=avaliacao;    
   }
 
+
   getCard = async () => {
     let card = document.createElement("div");
     card.setAttribute("class","card");
@@ -62,3 +63,4 @@ class Filme
     return card;
   }
 }
+
