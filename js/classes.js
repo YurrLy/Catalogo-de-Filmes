@@ -28,8 +28,19 @@ class Filme
     this.elenco=elenco;
     this.classificacao=classificacao;
     this.avaliacao=avaliacao;    
+    this.btnDetalhes=null;
   }
 
+  setBtnDetalhes= () => {
+    this.btnDetalhes = document.createElement("button");
+    this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
+    this.btnDetalhes.setAttribute("id", this.id);
+    this.btnDetalhes.setAttribute("class", "btn btn-primary");
+    };
+
+    getBtnDetalhes = () => {
+      return this.btnDetalhes
+    }
 
   getCard = async () => {
     let card = document.createElement("div");
@@ -60,7 +71,16 @@ class Filme
     card.appendChild(cardBody);
     cardBody.appendChild(hCardTitle);
     cardBody.appendChild(divDetalhes);
+    this.setBtnDetalhes();
+    cardBody.appendChild(this.getBtnDetalhes());
+
     return card;
   }
 }
+
+
+
+
+
+  
 

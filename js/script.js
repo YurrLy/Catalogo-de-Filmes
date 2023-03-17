@@ -33,13 +33,29 @@ btnBuscarFilme.onclick = () => {
 }
 
 let genero = ["Ação","Aventura","Ficção cientifica"];
+
 let listarFilmes = async (filmes) => {
 	let listaFilmes = await document.querySelector("#lista-filmes");
 	listaFilmes.innerHTML = "";
 	console.log(listaFilmes);
 	if(filmes.length > 0) {
 		filmes.forEach(async(filme) => {
+			console.log(filme);
 			listaFilmes.appendChild(await filme.getCard());
+			filme.getBtnDetalhes().onclick=()=>{
+				detalhesFilme(filme.id);
+			}
 		});
 	}
 }
+
+let detalhesFilme = async (id)=>{
+	fetch("http://www.omdbapi.com/?apikey=f3259506&s="+id)
+	.then((resp)=> resp.json())
+	.then((resp)=> {
+	
+	
+	
+	});
+	}
+	
