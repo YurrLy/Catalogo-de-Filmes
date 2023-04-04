@@ -21,6 +21,23 @@
     height: 22rem;
 }
 
+.col-md-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-4 img {
+    border-radius: 5px;
+}
+
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+    max-width: 60vw;
+}
+
+
+
 
 
 
