@@ -50,7 +50,7 @@ let listarFilmes = async (filmes) => {
 }
 
 let detalhesFilme = async (id) =>{
-    fetch("http://www.omdbapi.com/?apikey=f3259506&i="+id)
+    fetch("https://www.omdbapi.com/?apikey=f3259506&i="+id)
     .then((resp) => resp.json())
     .then((resp) => {
         console.log(resp);
