@@ -6,7 +6,7 @@ let favoritos = document.querySelector("#favoritos")
 btnBuscarFilme.onclick = () => {
     if(inputBuscarFilme.value.length > 0){
         let filmes =  new Array();
-    fetch("http://www.omdbapi.com/?apikey=21779dab&s="+inputBuscarFilme.value)
+    fetch("https://www.omdbapi.com/?apikey=21779dab&s="+inputBuscarFilme.value)
         .then((resp)=> resp.json())
         .then((resp)=> {
                 resp.Search.forEach((item) => {
