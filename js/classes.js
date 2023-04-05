@@ -131,11 +131,17 @@ getCard = () => {
       diretorDetalhes.setAttribute("class","card-text");
       diretorDetalhes.appendChild(document.createTextNode(this.direcao));
 
+      let btnSalvar = document.createElement("button");
+      btnSalvar.setAttribute("class","btn btn-primary");
+      btnSalvar.setAttribute("id","btn-salvar");
+      btnSalvar.textContent = "Favoritar/Desfavoritar"
+
       div_ImgDetalhes.appendChild(imgDetalhes);
       detalhesFilme.appendChild(div_ImgDetalhes);
       div_MainDetalhes.appendChild(mainDetalhes);
       detalhesFilme.appendChild(div_MainDetalhes);
 
+      mainDetalhes.appendChild(btnSalvar);
       mainDetalhes.appendChild(tituloDetalhes);
       mainDetalhes.appendChild(resumoDetalhes);
       mainDetalhes.appendChild(generoDetalhes);
@@ -147,7 +153,6 @@ getCard = () => {
       mainDetalhes.appendChild(premiosDetalhes);
       mainDetalhes.appendChild(btnFechar);
       
-
       return detalhesFilme;
   }
 }
